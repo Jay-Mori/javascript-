@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Book</h1>
+        
+        <div class="form-section">
+            <h2>Add/Edit Recipe</h2>
+            <form id="recipeForm">
+                <input type="hidden" id="recipeId">
+                <label for="title">Recipe Title*</label>
+                <input type="text" id="title" required>
+                
+                <label for="ingredients">Ingredients* (one per line)</label>
+                <textarea id="ingredients" required></textarea>
+                
+                <label for="instructions">Instructions</label>
+                <textarea id="instructions"></textarea>
+                
+                <label for="cuisine">Cuisine Type</label>
+                <select id="cuisine">
+                    <option value="">Any</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="American">American</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Thai">Thai</option>
+                    <option value="French">French</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <button type="submit" id="submitBtn">Add Recipe</button>
+                <button type="button" id="cancelBtn" class="hidden">Cancel</button>
+            </form>
+        </div>
+        
+        <div class="search-section">
+            <h2>Search Recipes</h2>
+            
+            <div class="cuisine-filter">
+                <label for="filterCuisine">Filter by Cuisine:</label>
+                <select id="filterCuisine">
+                    <option value="">All Cuisines</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="American">American</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Thai">Thai</option>
+                    <option value="French">French</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <label for="basicSearch">Search by Title or Ingredients:</label>
+            <input type="text" id="basicSearch" placeholder="Enter search term...">
+            
+            <button id="advancedSearchBtn">Toggle Advanced Search</button>
+            
+            <div id="advancedSearch" class="hidden">
+                <div class="search-options">
+                    <div>
+                        <label for="searchTitle">Search by Title:</label>
+                        <input type="text" id="searchTitle" placeholder="Recipe title...">
+                    </div>
+                    <div>
+                        <label for="searchIngredient">Search by Ingredient:</label>
+                        <input type="text" id="searchIngredient" placeholder="Specific ingredient...">
+                    </div>
+                    <div>
+                        <label for="searchCuisine">Search by Cuisine:</label>
+                        <select id="searchCuisine">
+                            <option value="">Any</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="American">American</option>
+                            <option value="Mediterranean">Mediterranean</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Thai">Thai</option>
+                            <option value="French">French</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="advancedSearchSubmit">Search</button>
+                <button id="resetSearch">Reset</button>
+            </div>
+        </div>
+        
+        <div class="recipes-section">
+            <h2>Your Recipes</h2>
+            <div id="recipesList"></div>
+        </div>
+    </div>
+
+    <script src="script.js">
+      
+    </script>
+</body>
+</html>
